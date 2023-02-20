@@ -1,0 +1,375 @@
+GIT
+
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+git branch Postman && git branch JMeter && git branch CheckLists && git branch BagReports && git branch SQL && git branch Charles && git branch MobileTesting
+
+2. Запушить все ветки на внешний репозиторий
+git push -u origin --all
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта 
+git checkout BagReports
+cat > bagreport.txt
+ID: 1,
+Summary: registration form not opening,
+Project: Name,
+Version: MacOS12.4,
+Severity: S1,
+Priority: P1,
+Status: New,
+Author: Kolegova Alesya,
+Assigned To: Full Name,
+Steps to reproduce: open the main page, click on the register button,
+Actual result: Registration form not opening,
+Expected Result: A registration form will appear,
+Attachment: links, screenshots, videos 
+ctrl+c
+
+4. Запушить структуру багрепорта на внешний репозиторий
+git add .
+git commit -m "Add bagreport.txt"
+git push
+
+5. Вмержить ветку Bag Reports в Main
+git merge BagReports -m "Merge BagReports"
+ 
+6. Запушить main на внешний репозиторий
+git push
+
+7. В ветке CheckLists набросать структуру чек листа
+git checkout CheckLists
+cat > checklist.txt
+1. Registration            
+- email 
+- social networks
+- field validation
+2. Authorization
+- user activated
+- user not activated
+- password recovery
+- field validation
+3. Profile
+- name change
+- email change
+- password change
+- field validation
+- subscription
+- account deleting
+ctrl+c
+
+8. Запушить структуру на внешний репозиторий
+git add .
+git commit -m "Add checklist.txt"
+git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+Pull requests - compare & pull request - create pull request - merge pull request - confirm merge 
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git checkout main
+git fetch
+git pull
+
+
+TXT
+
+1. Создать внешний репозиторий c названием TXT
+Repositories - New - Repository name - TXT - Public - Add a README file - Create repository
+
+2. Клонировать репозиторий TXT на локальный компьютер
+git clone git@github.com:kolealesya/TXT.git
+
+3. Внутри локального TXT создать файл “new.txt”
+cd TXT
+touch new.txt
+
+4. Добавить файл под гит
+git add .
+
+5. Закоммитить файл
+git commit -m "Add new.txt file"
+
+6. Отправить файл на внешний GitHub репозиторий
+git push
+
+7. Отредактировать содержание файла “new.txt” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата)
+vim new.txt
+Full Name - Kolegova Alesya
+Age - 23
+Pet - 1
+Salary - 1000
+
+8. Отправить изменения на внешний репозиторий
+git add .
+git commit -m "Add information to file"
+git push
+
+9. Создать файл preferences.txt
+touch preferences.txt
+
+10. В файл preferences.txt добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, страна, которую хочется посетить)
+vim preferences.txt
+Favorite Movie - Joker
+Favorite TV Series - Desperate Housewives
+Favorite Food - Pasta
+Favorite Season - Spring
+Favorite Country - Greece
+
+11. Создать файл skills.txt и добавить информацию о скиллах, которые будут изучены на курсе
+touch skills.txt
+vim skills.txt
+Skills - theory, documentation, methodologies, databases, web-technologies, mobile, devTools, SQL 
+
+12. Сделать коммит в одну строку
+git add . && git commit -m "Add preferences.txt and skills.txt files"
+
+13. Отправить сразу 2 файла на внешний репозиторий
+git push
+
+14. На веб интерфейсе создать файл bug_report.txt
+Repositories - TXT - Add file - Create new file - bug_report.txt
+
+15. Сделать Commit changes (сохранить) изменения на веб интерфейсе
+Commit changes
+
+16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт
+TXT - bug_report.txt - edit
+Bug-Report
+ID: 1,
+Summary: registration form not opening,
+Project: Name,
+Version: MacOS12.4,
+Severity: S1,
+Priority: P1,
+Status: New,
+Author: Kolegova Alesya,
+Assigned To: Full Name,
+Steps to reproduce: open the main page, click on the register button,
+Actual result: Registration form not opening,
+Expected Result: A registration form will appear,
+Attachment: links, screenshots, videos
+
+17. Сделать Commit changes (сохранить) изменения на веб интерфейсе
+Commit changes
+
+18. Синхронизировать внешний и локальный репозиторий TXT
+git pull
+
+
+JSON
+
+1. Создать внешний репозиторий с названием JSON
+Repositories - New - Repository name - JSON - Public - Add a README file - Create repository
+
+2. Клонировать репозиторий JSON на локальный компьютер
+git clone git@github.com:kolealesya/JSON.git
+
+3. Внутри локального JSON создать файл new.json
+cd JSON
+touch new.json
+
+4. Добавить файл под гит
+git add .
+
+5. Закоммитить файл
+git commit -m "Add new.json file"
+
+6. Отправить файл на внешний GitHub репозиторий
+git push
+
+7. Отредактировать содержимое файла new.json - написать информацию о себе (ФИО, возраст, кол-во домашних животных, будущая желаемая зарплата)
+vim new.json
+{
+    "FullName": "KolegovaAlesya",
+    "age": 23,
+    "pet": 1,
+    "salary": 1000
+}
+
+8. Отправить изменения на внешний репозиторий
+git add .
+git commit -m "Add information to file"
+git push
+
+9. Создать файл preferences.json
+touch preferences.json
+
+10. В файл preferences.json добавить информацию о своих предпочтениях (любимый фильм, любимый сериал, любимая еда, любимое время года, страна, которую хочется посетить)
+vim preferences.json
+{
+    "Movie": "Joker",
+    "Series": "DesperateHousewives",
+    "Food": "Pasta",
+    "Season": "Spring",
+    "Country": "Greece"
+}
+
+11. Создать файл skills.json и добавить информацию о скиллах, которые будут изучены на курсе 
+touch skills.json
+vim skills.json
+{
+   "Skills":[
+      "Theory",
+      "Documentation",
+      "Methodologies",
+      "Databases",
+      "Web-technologies",
+      "Mobile",
+      "DevTools",
+      "SQL"
+   ]
+}
+
+12. Отправить сразу 2 файла на внешний репозиторий
+git add .
+git commit -m "Add preferences.json and skills.json files"
+git push
+
+13. На веб интерфейсе создать файл bug_report.json
+Repositories - JSON - Add file - Create new file - bug_report.json
+
+14. Сделать Commit changes (сохранить) изменения на веб интерфейсе
+Commit new file 
+
+15. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт
+JSON - bug_report.json - edit
+{
+   "ID":1,
+   "Summary":"RegistrationFormNotOpening",
+   "Project":"Name",
+   "Version":"MacOS12.4",
+   "Severity":"S1",
+   "Priority":"P1",
+   "Status":"New",
+   "Author":"KolegovaAlesya",
+   "AssignedTo":"FullName",
+   "Steps to reproduce":[
+      "OpenMainPage",
+      "ClickOnTheRegisterButton"
+   ],
+   "ActualResult":"RegistrationFormNotOpening",
+   "ExpectedResult":"ARegistrationFormWillAppear",
+   "Attachment":[
+      "links",
+      "screenshots",
+      "videos"
+   ]
+}
+
+16. Сделать Commit changes (сохранить) изменения на веб интерфейсе
+Commit changes
+
+17. Синхронизировать внешний и локальный репозиторий JSON
+git pull
+
+
+XML
+
+1. Создать внешний репозиторий с названием XML
+Repositories - New - Repository name - XML - Public - Add a README file - Create repository
+
+2. Клонировать репозиторий XML на локальный компьютер 
+git clone git@github.com:kolealesya/XML.git
+
+3. Внутри локального XML создать файл new.xml
+cd XML
+touch new.xml
+
+4. Добавить файд под гит
+git add .
+
+5. Закоммитить файл
+git commit -m "Add new.xml file"
+
+6. Отправить файл на внешний GitHub репозиторий
+git push
+
+7. Отредактировать содержание файла new.xml - написать информацию о себе (ФИО, возраст, кол-во домашних животных, будущая желаемая зарплата)
+vim new.xml
+<info> 
+<FullName>KolegovaAlesya</FullName> 
+<age>23</age> 
+<pet>1</pet> 
+<salary>1000</salary>
+</info>
+
+8. Отправить изменения на внешний репозиторий
+git add .
+git commit -m "Add information to file"
+git push
+
+9. Создать файл preferences.xml
+touch preferences.xml
+
+10. В файл preferences.xml добавить информацию о своих предпочтениях (любимый фильм, любимый сериал, любимая еда, любимое время года, страна, которую хочется посетить)
+vim preferences.xml
+<preferences>
+<Movie>Joker</Movie> 
+<Series>DesperateHousewives</Series>
+<Food>Pasta</Food> 
+<Season>Spring</Season>
+<Country>Greece</Country>
+</preferences>
+
+11.Создать файл skills.xml и добавить информацию о скиллах, которые будут изучены на курсе
+touch skills.xml
+vim skills.xml
+<Skills>
+      <Skill>Theory</Skill>
+      <Skill>Documentation</Skill>
+      <Skill>Methodologies</Skill>
+      <Skill>Databases</Skill>
+      <Skill>Web-technologies</Skill>
+      <Skill>Mobile</Skill>
+      <Skill>DevTools</Skill>
+      <Skill>SQL</Skill>
+</Skills>
+
+12. Сделать коммит в одну строку
+git add . && git commit -m "Add preferences.xml and skills.xml files"
+
+13. Отправить сразу два файла на внешний репозиторий 
+git push
+
+14. На веб интерфейсе создать файл bug_report.xml
+Repositories - XML - Add file - Create new file - bug_report.xml
+
+15. Сделать Commit changes (сохранить) изменения на веб интерфейсе
+Commit new file
+
+16.  На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт
+XML - bug_report.xml - edit
+<bugreport>
+<ID>1</ID>
+<Summary>RegistrationFormNotOpening</Summary>
+<Project>Name</Project>
+<Version>MacOS12.4</Version>
+<Severity>S1</Severity>
+<Priority>P1</Priority>
+<Status>New</Status>
+<Author>KolegovaAlesya</Author>
+<AssignedTo>FullName</AssignedTo>
+<STR>
+    <STR>GoToTheMainPage</STR>
+    <STR>ClickOnTheRegisterButton</STR>
+</STR>
+<ActualResult>RegistrationFormNotOpening</ActualResult>
+<ExpectedResult>ARegistrationFormWillAppear</ExpectedResult>
+<Attachment>
+<Attachment>links</Attachment>
+<Attachment>screenshots</Attachment>
+</Attachment>
+</bugreport>
+
+17. Сделать Commit changes (сохранить) изменения на веб интерфейсе
+Commit changes
+
+18. Синхронизировать внешний и локальный репозиторий XML
+git pull
